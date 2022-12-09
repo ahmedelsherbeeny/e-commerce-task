@@ -3,9 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './navigation/header/header.component';
-import { FooterComponent } from './navigation/footer/footer.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LayoutModule } from './layout/layout.module';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { LoaderInterceptor } from './loader/loader.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 
 
@@ -14,19 +18,20 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
-    
+    HttpClientModule,
+    LayoutModule,
+    NgxPaginationModule,
+    BrowserAnimationsModule 
+
 
 
 
   ],
-  providers: [],
+  providers: [ {provide:HTTP_INTERCEPTORS,useClass:LoaderInterceptor,multi:true},],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

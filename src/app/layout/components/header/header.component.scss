@@ -1,0 +1,157 @@
+@import 'src/app/helpers/_mixins.scss';
+
+.loader-container{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background-color: black;
+        opacity: 0.8;
+
+
+    .loader {
+        width: 48px;
+        height: 48px;
+       
+        border: 2px solid #FFF;
+        border-radius: 50%;
+        display: inline-block;
+       
+
+        box-sizing: border-box;
+        animation: rotation 0.7s linear infinite;
+      }
+      .loader::after,
+      .loader::before {
+        content: '';  
+        box-sizing: border-box;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #FF3D00;
+        width: 6px;
+        height: 6px;
+        transform: translate(150%, 150%);
+        border-radius: 50%;
+      }
+      .loader::before {
+        left: auto;
+        top: auto;
+        right: 0;
+        bottom: 0;
+        transform: translate(-150%, -150%);
+      }
+
+}
+
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+
+.header {
+    height: 80px;
+    box-shadow: 0 0 10px #ddd;
+    background: #FFFFFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .left-side {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 80px;
+
+            .logo {
+
+                @include logo-style;
+
+            }
+
+            .home {
+                width: 46px;
+                height: 24px;
+                @include links-design;
+
+
+            }
+
+        }
+
+        .right-side {
+            display: flex;
+            gap: 30px;
+
+            .account {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                
+
+                color: #667085;
+
+            }
+
+            a {
+                background-color: transparent;
+                width: fit-content;
+                height: 24px;
+                @include links-design;
+
+            }
+
+            .logout {
+                background-color: transparent;
+                width: 100px;
+                height: 24px;
+                @include links-design;
+            }
+
+            .count {
+                position: relative;
+
+                .total {
+                    position: absolute;
+                    font-family: 'Inter';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 10px;
+                    line-height: 12px;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background-color: aqua;
+                    left: 15px;
+                    bottom: 10px;
+                    color: #344054;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                }
+
+            }
+        }
+
+    }
+
+}

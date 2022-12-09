@@ -4,10 +4,9 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class AuthService {
 
   URL="https://dummyjson.com";
-  isLoggedIn:boolean=false;
 
   constructor(private http:HttpClient) { }
 
@@ -16,3 +15,5 @@ export class UserService {
     return this.http.post(this.URL+"/auth/login",data);
   }
 }
+
+

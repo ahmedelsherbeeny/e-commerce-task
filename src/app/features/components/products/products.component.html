@@ -1,0 +1,58 @@
+
+
+<div class="crumb">Home/Products/{{filterValue}}</div>
+<div class="box-container">
+
+
+    <div class="filter">
+        <h2>Products</h2>
+        <form [@listAnimation]="categoryNums.length">
+            <div *ngFor="let cat of categoryNums" class="category">
+                <input type="checkbox" value="{{cat.category}}" (click)="filter($event)"> {{cat.category}}
+                ({{cat.number}})
+            </div>
+
+        </form>
+    </div>
+
+    <div class="numofproductsfound" *ngIf="searched">({{numOfSerchedFound}}) products found</div>
+
+    <div class="boxes" @fade>
+
+        <div class="box" *ngFor="let prod of products  | paginate:{itemsPerPage:5,currentPage:p} ">
+            <div class="discount">-{{prod.discountPercentage}}%</div>
+            <div class="image-holder"> <img src="{{prod.images[0]}}" alt="">
+            </div>
+            <div class="title">
+                {{prod.title}}
+            </div>
+            <div class="description">{{prod.description}}</div>
+            <div class="prices">
+                <div class="old-price"> <span>{{prod.price}}</span> USD</div>
+                <div class="current-price"> <span>{{prod.price - math.ceil(((prod.price * prod.discountPercentage) /
+                        100)) }} </span>USD
+                </div>
+            </div>
+            <div class="brand"><span>Brand:</span> {{prod.brand}}</div>
+            <div class="category"><span>Category:</span> {{prod.category}}</div>
+            <div class="stock"><span>In stock:</span> {{prod.stock}}</div>
+            <div class="rating"><span class="fa fa-star">{{prod.rating}}</span>
+                <span class="num">(11)</span>
+            </div>
+            <button (click)="IncreaseCount(prod.id)" [disabled]="prod.added">{{productsInCart.includes(prod.id)
+                ?
+                addToCartText :
+                'Add to cart'}}</button>
+
+        </div>
+
+    </div>
+
+
+
+</div>
+<div class="pagination">
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+
+
+    <!-- </div> -->

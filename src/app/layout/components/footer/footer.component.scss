@@ -1,0 +1,47 @@
+@import '/src/app/helpers/_mixins.scss';
+
+
+.footer {
+    position: fixed;
+    height: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: #1D2939;
+    width: 100%;
+
+    .container {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            h2 {
+                color: white;
+            }
+
+            @include logo-style;
+
+        }
+
+        .copy-right {
+            width: 160px;
+            height: 24px;
+
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+
+            text-align: right;
+
+
+            color: #98A2B3;
+        }
+    }
+
+}

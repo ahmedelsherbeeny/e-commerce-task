@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { LazyLoadedComponentsRoutingModule } from './lazy-loaded-components-routing.module';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -12,9 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    LazyLoadedComponentsRoutingModule,
+    AuthenticationRoutingModule,
     FormsModule,
     ReactiveFormsModule
   ]
 })
-export class LazyLoadedComponentsModule { }
+export class AuthenticationModule { }
