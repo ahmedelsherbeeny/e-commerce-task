@@ -10,8 +10,10 @@ export class AuthGuard implements CanActivate {
   constructor(private share:SharedDataService,private router:Router,private userService:UserService){}
 // this canactivate prevents users from changing url path to see products without being authenticated
   canActivate() {
+    const token=JSON.parse(localStorage.getItem("token")!)
       
-    if(this.share.token.getValue() !== '' && this.userService.isLoggedIn==true){
+    console.log(token)
+    if(token){
 
       return true;
 
