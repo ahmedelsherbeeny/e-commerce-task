@@ -8,7 +8,7 @@ import { UserService } from '../services/user.service';
 })
 export class AuthGuard implements CanActivate {
   constructor(private share:SharedDataService,private router:Router,private userService:UserService){}
-
+// this canactivate prevents users from changing url path to see products without being authenticated
   canActivate() {
       
     if(this.share.token.getValue() !== '' && this.userService.isLoggedIn==true){
