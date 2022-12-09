@@ -29,7 +29,6 @@ export class ProductsComponent implements OnInit,OnDestroy{
   numOfSerchedFound: number = 0;
   addToCartText:string='Add to cart'
   productsInCart:any=[]
-  filterCategories:any[]=[]
   filterValue:string='';
   unsubscribe$:Subject<boolean>=new Subject();
 
@@ -106,6 +105,7 @@ export class ProductsComponent implements OnInit,OnDestroy{
     this.productService.getProds().pipe(takeUntil(this.unsubscribe$))
     .subscribe((prods: any) => {
       this.products = prods.products;
+      // products filter is used to filter products
       this.productsForFilter = this.products
       if(loadCategory){
         this.getAllCategories();
