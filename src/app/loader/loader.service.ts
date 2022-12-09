@@ -11,9 +11,11 @@ export class LoaderService {
   constructor() {
     
    }
+   // show the loader when we hit the endpoint
   show(){
     this.isLoading.next(true)
   }
+  // loader is being hidden after period of time
   hide(){
     this.isLoading.next(false)
   }
