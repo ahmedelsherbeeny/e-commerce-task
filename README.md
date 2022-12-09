@@ -20,6 +20,9 @@ This project was implemented using Angular 15.
 #### User can search products
 #### User can log out of products page
 
+## Live demo
+ https://ahmedelsherbeeny.github.io/e-commerce-task/
+
 
 
 
