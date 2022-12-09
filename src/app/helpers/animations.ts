@@ -1,6 +1,7 @@
+
+
+// using angular builtin animations 
 import { animate, keyframes, query, stagger, state, style, transition, trigger } from '@angular/animations';
-
-
 
 export let fade=  trigger('fade',[
   state('void',style({opacity:'0'})),
@@ -10,8 +11,6 @@ export let fade=  trigger('fade',[
     animate(2000)
   ])
 ])
-
-
 
 export let staggering= trigger('listAnimation',[
   transition('*=>*',[
