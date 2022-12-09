@@ -33,11 +33,10 @@ export class LoginComponent implements OnInit {
       password: formData.password
     }
     this.userService.logIn(data).subscribe((response: any) => {
-      console.log(response)
       this.share.token.next(response.token);
       localStorage.setItem("token",JSON.stringify(response.token))
 
-      // here user is authenticated
+      // here user is authenticated and can redirect to products page
       this.userService.isLoggedIn=true
 
       this.router.navigate(['/features/products']);

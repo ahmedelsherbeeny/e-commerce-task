@@ -136,7 +136,6 @@ export class ProductsComponent implements OnInit,OnDestroy{
       });
       // finally pushing each category with its number of occurence in categorynums arry 
       this.categoryNums.push({ category: cat, number: count })
-      console.log(" this.categoryNums", this.categoryNums);
       
 
     });
