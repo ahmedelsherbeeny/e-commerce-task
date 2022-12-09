@@ -36,6 +36,8 @@ export class LoginComponent implements OnInit {
       console.log(response)
       this.share.token.next(response.token);
       localStorage.setItem("token",JSON.stringify(response.token))
+
+      // here user is authenticated
       this.userService.isLoggedIn=true
 
       this.router.navigate(['/features/products']);
