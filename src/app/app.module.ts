@@ -25,7 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     LayoutModule,
     NgxPaginationModule,
-    BrowserAnimationsModule 
+    BrowserAnimationsModule,
 
 
 
