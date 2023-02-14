@@ -39,6 +39,8 @@ export class ProductsComponent implements OnInit,OnDestroy{
     // getting all products and pushing them in products array
     this.getAllProducts(true);
     this.getSearchedValues()
+
+    
    
   }
 
@@ -161,8 +163,9 @@ export class ProductsComponent implements OnInit,OnDestroy{
 
   // getting number of added products to cart 
   IncreaseCount(id: number) {
+   
     let prevCount = this.share.count.getValue();
-    this.share.count.next(prevCount + 1);
+     this.share.count.next(++prevCount);
     let product = this.products.find((p: any) => p.id === id);
     product.added = true;
     this.productsInCart.push(product.id)

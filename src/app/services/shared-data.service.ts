@@ -7,6 +7,5 @@ import { BehaviorSubject } from 'rxjs';
 export class SharedDataService {
 
   public count:BehaviorSubject<number>=new BehaviorSubject(0);
-  public token:BehaviorSubject<string>=new BehaviorSubject('');
   constructor() { }
 }

@@ -7,13 +7,13 @@ import { UserService } from '../services/user.service';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  constructor(private share:SharedDataService,private router:Router,private userService:UserService){}
+  constructor(private router:Router,private userService:UserService){}
 // this canactivate prevents users from changing url path to see products without being authenticated
   canActivate() {
     const token=JSON.parse(localStorage.getItem("token")!)
       
-    console.log(token)
-    if(token){
+    if(this.userService.checkToken()){
+
 
       return true;
 

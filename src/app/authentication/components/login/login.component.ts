@@ -15,6 +15,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class LoginComponent implements OnInit {
   logInForm!: FormGroup
+  showedDate:any=''
 
   constructor(private userService: UserService, private fb: FormBuilder, private router:Router,private share:SharedDataService) { 
   }
@@ -33,17 +34,23 @@ export class LoginComponent implements OnInit {
       password: formData.password
     }
     this.userService.logIn(data).subscribe((response: any) => {
-      this.share.token.next(response.token);
       localStorage.setItem("token",JSON.stringify(response.token))
 
       // here user is authenticated and can redirect to products page
-      this.userService.isLoggedIn=true
 
-      this.router.navigate(['/features/products']);
+      this.router.navigate(['/products']);
 
     }, (error: any) => {
       alert(error.error.message)
     })
+
+  }
+
+
+  increment(){
+    let date=new Date()
+    console.log(date)
+
 
   }
 

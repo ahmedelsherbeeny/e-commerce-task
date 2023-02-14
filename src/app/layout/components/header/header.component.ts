@@ -21,7 +21,10 @@ export class HeaderComponent {
   }
 
   watchCount(){
+    
     this.share.count.subscribe(count =>this.count = count)
+
+    
   }
   logout(){
     localStorage.clear()

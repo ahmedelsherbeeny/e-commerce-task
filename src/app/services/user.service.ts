@@ -7,7 +7,6 @@ import { Injectable } from '@angular/core';
 export class UserService {
 
   URL="https://dummyjson.com";
-  isLoggedIn:boolean=false;
 
   constructor(private http:HttpClient) { }
 
@@ -15,4 +14,17 @@ export class UserService {
   logIn(data:any){
     return this.http.post(this.URL+"/auth/login",data);
   }
+  
+  checkToken(){
+    const token=JSON.parse(localStorage.getItem("token")!)
+    if(token){
+      return true;
+    }else{
+      return false;
+    }
+
+
+  }
+
+ 
 }

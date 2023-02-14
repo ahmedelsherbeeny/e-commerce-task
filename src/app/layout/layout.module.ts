@@ -23,7 +23,8 @@ import { SearchComponent } from './components/search/search.component';
 
   ],
   exports:[MainLayoutComponent,
-    SearchComponent
+    SearchComponent,
+   
   
   ]
 })

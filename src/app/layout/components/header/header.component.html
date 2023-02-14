@@ -22,15 +22,15 @@
 
         </div>
         <div class="right-side">
-            <app-search *ngIf="router.url== '/features/products'"></app-search>
+            <app-search *ngIf="router.url== '/products'"></app-search>
 
-            <div class="count" *ngIf="router.url== '/features/products'" >
+            <div class="count" *ngIf="router.url== '/products'" >
                 <i class="fa fa-shopping-cart"></i>
                 <div class="total">{{count}}</div>
             </div>
             <a class="login" *ngIf="router.url== '/'">Log In</a>
-            <div class="account" *ngIf="router.url== '/features/products'">Account</div>
-            <a class="logout" (click)="logout()" *ngIf="router.url== '/features/products'" >log out</a>
+            <div class="account" *ngIf="router.url== '/products'">Account</div>
+            <a class="logout" (click)="logout()" *ngIf="router.url== '/products'" >log out</a>
         </div>
 
 
