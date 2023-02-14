@@ -1,27 +1,28 @@
-# ECommerce
+# E-Commerce
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
+This project was implemented using Angular 15.
 
-## Development server
+## Structure
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### The project has three modules => authentication, features and layout module
+#### Layout module contains header and footer and its routing module controls all routing
+#### Authentication module contains login for user 
+#### Faetures module contains products that user can view them
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+#### User can not view products unless he is authenticated
+#### User is authenticated then he can view products
+#### Products is displayed in paginated manner
+#### User can view number of products he added in his cart
+#### User can filter products based on categories
+#### User can search products
+#### User can log out of products page
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Live demo
+ https://ahmedelsherbeeny.github.io/e-commerce-task/
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
